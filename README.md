@@ -4,9 +4,10 @@
 
 ### Team members
 
-* Member 1 (responsible for ...)
-* Member 2 (responsible for ...)
-* Member 3 (responsible for ...)
+* Tomáš Paulysko (responsible for ...)
+* Martin Mička (responsible for ...)
+* Tomáš Husslik (responsible for ...)
+* Jakub Pachel(responsible for ...)
 
 ## Theoretical description and explanation
 
