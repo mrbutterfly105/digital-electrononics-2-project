@@ -1,6 +1,6 @@
 
 
-# Recommended README.md file structure
+# Smart plant watering system and data logger 
 
 ### Team members
 
