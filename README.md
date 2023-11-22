@@ -4,10 +4,10 @@
 
 ### Team members
 
-* Tomáš Paulysko (responsible for ...)
-* Martin Mička (responsible for ...)
-* Tomáš Husslik (responsible for ...)
-* Jakub Pachel(responsible for ...)
+* Tomáš Paulysko (responsible for display and encoder)
+* Martin Mička (responsible for light sensor and lamp)
+* Tomáš Husslik (responsible for soil moisture sensors and watering)
+* Jakub Pachel(responsible for thermometer and humidity sinsor, control lights)
 
 ## Theoretical description and explanation
 
