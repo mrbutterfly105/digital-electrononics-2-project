@@ -12,6 +12,7 @@ int air_temp = get_air_temp();
 int tank_level = get_tank_level(); // in %
 int room_light = get_room_light(); 
 int lamp_intenzity = 0;
+
 bool pump_state = false;
 bool low_water_level = false; 
 bool bad_temp = false;
@@ -20,7 +21,7 @@ bool bad_temp = false;
 while(1){
 // tady bude všechna magie
 
-  ;
+  
 }
 
 
