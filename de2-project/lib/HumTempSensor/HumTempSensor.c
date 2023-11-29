@@ -30,14 +30,10 @@ struct DHT_values_structure
 
 
 
-void twi_init()
-{
-  // Inicializace TWI (Two Wire Interface)
-  // ...
-}
 
 void getDataFromSensor()
 {
+  twi_init();
   // Čtení hodnot z čidla DHT12
   twi_start();
   if (twi_write((SENSOR_ADR << 1) | TWI_WRITE) == 0)
@@ -48,8 +44,10 @@ void getDataFromSensor()
     twi_write((SENSOR_ADR << 1) | TWI_READ);
     dht12.hum_int = twi_read(TWI_ACK);
     dht12.hum_dec = twi_read(TWI_NACK);
+    // dht12.hum_int = 42;
+    //dht12.hum_dec = 0;
   }
-  twi_stop();
+  
 
   
 
@@ -62,8 +60,9 @@ void getDataFromSensor()
     twi_write((SENSOR_ADR << 1) | TWI_READ);
     dht12.temp_int = twi_read(TWI_ACK);
     dht12.temp_dec = twi_read(TWI_NACK);
+    
   }
-  twi_stop();
+  
 
   twi_start();
   if (twi_write((SENSOR_ADR << 1) | TWI_WRITE) == 0)
@@ -77,18 +76,34 @@ void getDataFromSensor()
   twi_stop();
 }
 
-float get_air_humidity()
+float get_air_humidity_int()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
   // Logika pro převod na procenta
-  return (float)dht12.hum_int + (float)dht12.hum_dec / 10.0;
+  return (float)dht12.hum_int ;
 }
-
-float get_air_temp()
+float get_air_humidity_dec()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // Logika pro převod na teplotu v °C
-  return (float)dht12.temp_int + (float)dht12.temp_dec / 10.0;
+  // Logika pro převod na procenta
+  return  (float)dht12.hum_dec / 10.0;
+}
+
+float get_air_temp_int()
+{
+  // Zavolání funkce pro čtení hodnot z čidla
+  getDataFromSensor();
+  // vypsání celé hodnoty teploty
+ return (float)dht12.temp_int;
+
+}
+float get_air_temp_dec()
+{
+  // Zavolání funkce pro čtení hodnot z čidla
+  getDataFromSensor();
+  // vypsání desetinné hodnoty teploty
+ return (float)dht12.temp_dec;
+
 }
