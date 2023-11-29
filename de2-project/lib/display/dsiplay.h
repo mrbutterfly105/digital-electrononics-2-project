@@ -11,6 +11,6 @@
 void init_display();
 
 // Funkce pro zobrazení hodnot na displeji
-void update_displa();
+void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec, int16_t s_hum, int16_t tank_fill);
 
 #endif // DISPLAY_H

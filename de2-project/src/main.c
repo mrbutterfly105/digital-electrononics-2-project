@@ -8,8 +8,8 @@
 #include <twi.h>
 #include <dsiplay.h>
 #include <stdlib.h>
-#include <font.h>
-
+// #include <font.h>
+#include <Arduino.h>
 
 // end includes
 
@@ -19,50 +19,54 @@
 #endif
 // end defines
 
-int main (void){
+int main(void)
+{
 
-// inicialize knihoven
-twi_init();
-uart_init(UART_BAUD_SELECT(115200,F_CPU));
-init_display();
+    // inicialize knihoven
+    twi_init();
+    uart_init(UART_BAUD_SELECT(115200, F_CPU));
 
-sei();
-TIM2_OVF_16MS;
-TIM2_OVF_ENABLE;
+    init_display();
 
-// inicializace pinů a globálních proměnných
+    sei();
+    TIM2_OVF_16MS;
+    TIM2_OVF_ENABLE;
 
-// int soil_humidity = get_soil_humidytiy();
-// int air_humidity = get_air_humidity();
-// int air_temp = get_air_temp();
-// int tank_level = get_tank_level(); // in %
-// int room_light = get_room_light(); 
-// int16_t lamp_intenzity = 0;
+    // inicializace pinů a globálních proměnných
 
-// int8_t pump_state = 0;
-// int8_t low_water_level = 0; 
-// int8_t bad_temp = 0;
+    // int soil_humidity = get_soil_humidytiy();
+    // int air_humidity = get_air_humidity();
+    // int air_temp = get_air_temp();
+    // int tank_level = get_tank_level(); // in %
+    // int room_light = get_room_light();
+    // int16_t lamp_intenzity = 0;
 
+    // int8_t pump_state = 0;
+    // int8_t low_water_level = 0;
+    // int8_t bad_temp = 0;
 
-while(1){
-;
-  
+    while (1)
+    {
+        ;
+    }
+
+    return 0;
 }
 
+static uint8_t j = 0;
 
-return 0;
+void main_process()
+{
+    update_display(j, j, j, j, j, j);
 }
 
-
-void main_process(){
-//all the magic
-update_displa(10, 10, 10, 10);
-
-}
-
-
-ISR(TIM2_OVF_vect){
-uart_puts("nevim ne");
-main_process();
-
+ISR(TIMER2_OVF_vect)
+{
+    //* refresh rate
+    if (j == 20)
+    {
+        main_process();
+        j = 0;    
+    }
+    j++;
 }
