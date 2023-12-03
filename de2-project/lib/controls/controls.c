@@ -1,41 +1,33 @@
 
-#define LED_GREEN PB5  // nastavení pinů ledek --> zelná je kontrolka pro nádrž vody
-#define LED_RED PB0    // nastavení pinů ledek --> červená je kontrolka pro vysokou teplotu
-#include <gpio.h>     
-int main(void)
-{
-int tank_level = 25;
-int air_temp = 22.3;
-uint16_t low_water_level = 0; 
-uint16_t bad_temp = 0;
-GPIO_mode_output(&DDRB, LED_GREEN);
-GPIO_mode_output(&DDRB, LED_RED);
+#define LED_GREEN PD7  //pin D7 nastavení pinů ledek --> zelná je kontrolka pro nádrž vody
+#define LED_RED PD6    //pin D6 nastavení pinů ledek --> červená je kontrolka pro vysokou teplotu
+#include <gpio.h>   
+#include <uart.h>    
+#include <avr/interrupt.h>  // Interrupts standard C library for AVR-GCC
 
-if (tank_level < 25){
-   low_water_level = 1;
-}else{
-   low_water_level = 0;
+
+  
+
+void Low_water_LED(int Low_watter_LED_State) {
+   GPIO_mode_output(&DDRB, LED_GREEN);
+    sei();  // Needed for UART
+    if (Low_watter_LED_State == 1) {
+      uart_puts("R1 \r\n");
+      GPIO_write_high(&PIND, LED_GREEN);  
+    } else if (Low_watter_LED_State == 0) {
+       uart_puts("R0 \r\n");
+      GPIO_write_low(&PIND, LED_GREEN);
+    } 
 }
 
-if (air_temp < 10 || air_temp > 35){
-   bad_temp = 1;
-}else{
-   bad_temp = 0;
-}
-
-
-if (low_water_level == 1){  
-   GPIO_write_high(&DDRB, LED_GREEN);
-}else{
-   GPIO_write_low(&DDRB, LED_GREEN);
-
-}
-
-if(bad_temp == 1){
- GPIO_write_high(&DDRB, LED_RED);
-}else{
-   GPIO_write_low(&DDRB, LED_RED);
-   
-}
-
+void bad_temp_LED(int bad_temp_LED_State) {
+   GPIO_mode_output(&DDRB, LED_RED);
+    sei();  // Needed for UART
+    if (bad_temp_LED_State == 1) {
+       uart_puts("G1 \r\n");
+     GPIO_write_high(&PIND, LED_RED);
+    } else if (bad_temp_LED_State == 0) {
+       uart_puts("G0 \r\n");
+       GPIO_write_low(&PIND, LED_RED);
+    }
 }

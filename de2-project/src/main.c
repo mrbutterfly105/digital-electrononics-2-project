@@ -12,18 +12,18 @@
 #include <uart.h>           // Peter Fleury's UART library
 #include <stdlib.h>         // C library. Needed for number conversions
 #include <HumTempSensor.h>
+#include <controls.h>
 
 int main (void){
 
 // inicializace pinů a globálních proměnných
 //int soil_humidity = get_soil_humidytiy();
 
-//int tank_level = get_tank_level(); // in %
+
 //int room_light = get_room_light(); 
 //int lamp_intenzity = 0;
 //bool pump_state = false;
-//bool low_water_level = false; 
-//bool bad_temp = false;
+
 
   // String for converting numbers by itoa()
 
@@ -32,7 +32,7 @@ int main (void){
     // UART
     uart_init(UART_BAUD_SELECT(9600, F_CPU));
     uart_puts("I2C sensor detected\r\n");
-    sei();  // Needed for UART
+    //sei();  // Needed for UART
       
     
     
@@ -65,10 +65,10 @@ float air_humidity_int;
 float air_temp_int;
 float air_humidity_dec;
 float air_temp_dec;
-air_humidity_int = get_air_humidity_int();
-air_temp_int = get_air_temp_int();
+air_humidity_int  = get_air_humidity_int();
+air_temp_int =0;// get_air_temp_int();
 air_humidity_dec = get_air_humidity_dec();
-air_temp_dec = get_air_temp_dec();
+air_temp_dec =0;// get_air_temp_dec();
 uart_puts("Temperature: \r\n");
 itoa(air_temp_int, string, 10);
 uart_puts(string);
@@ -83,5 +83,23 @@ uart_puts(".");
 itoa(air_humidity_dec, string, 10);
 uart_puts(string);
 uart_puts(" %\r\n");
+
+
+int tank_level =50;// get_tank_level(); // in %
+//int low_water_level = 0; 
+//int bad_temp = 0;
+int air_temp = air_temp_int + air_temp_dec/10;
+
+if (tank_level < 25){
+   Low_water_LED(1);
+}else{
+   Low_water_LED(0);
+}
+
+if (air_temp < 10 || air_temp > 35){
+   bad_temp_LED(1);
+}else{
+   bad_temp_LED(0);
+}
 
 }

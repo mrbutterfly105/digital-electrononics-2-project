@@ -80,14 +80,14 @@ float get_air_humidity_int()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // Logika pro převod na procenta
+  // vypsání celé hodnoty procent vlhkosti vzduchu
   return (float)dht12.hum_int ;
 }
 float get_air_humidity_dec()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // Logika pro převod na procenta
+  // vypsání desetiné hodnoty procent vlhkosti vzduchu
   return  (float)dht12.hum_dec / 10.0;
 }
 
