@@ -13,6 +13,8 @@ void init_display();
 void check_for_setup();
 void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec, int16_t s_hum, int16_t tank_fill, 
                     int16_t* max_temp, int16_t* min_temp, int16_t* min_tank);
+void adjust(int16_t *value);
+void set_default();
 void print_setup_max_temp();
 void print_setup_min_temp();
 void print_setup_min_tank_fill();

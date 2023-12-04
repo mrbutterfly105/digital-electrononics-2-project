@@ -19,6 +19,10 @@ void init_display()
     oled_init(OLED_DISP_ON);
 }
 
+void set_default(){
+    state = DEFAULT;
+}
+
 void check_for_setup()
 {
     if (update_counter % 3 == 0 && get_button_state(ENTER) == 0)

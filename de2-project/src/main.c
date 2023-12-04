@@ -8,7 +8,7 @@
 #include <twi.h>
 #include <dsiplay.h>
 #include <stdlib.h>
-// #include <font.h>
+//#include <font.h>
 #include <buttons.h>
 
 // end includes
