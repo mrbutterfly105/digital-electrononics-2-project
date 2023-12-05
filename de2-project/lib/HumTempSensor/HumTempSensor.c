@@ -1,6 +1,6 @@
 /***********************************************************************
  * 
- * GPIO library for AVR-GCC.
+ * HumTempSensor library for AVR-GCC.
  * 
  * ATmega328P (Arduino Uno), 16 MHz, PlatformIO
  *
@@ -14,26 +14,31 @@
 /* Includes ----------------------------------------------------------*/
 #include <twi.h>
 
+// Adresa I2C senzoru vlhkosti a teploty
 #define SENSOR_ADR 0x5C
+
+// Adresa paměti pro údaje o vlhkosti a teplotě v senzoru
 #define SENSOR_HUM_MEM 0
 #define SENSOR_TEMP_MEM 2
+
+// Adresa paměti pro kontrolní součet v datech ze senzoru
 #define SENSOR_CHECKSUM 4
 
+// Struktura pro ukládání hodnot vlhkosti a teploty získaných ze senzoru
 struct DHT_values_structure
 {
-  uint8_t hum_int;
-  uint8_t hum_dec;
-  uint8_t temp_int;
-  uint8_t temp_dec;
-  uint8_t checksum;
+  uint8_t hum_int;  // Celá část vlhkosti
+  uint8_t hum_dec;  // Desetinná část vlhkosti
+  uint8_t temp_int; // Celá část teploty
+  uint8_t temp_dec; // Desetinná část teploty
+  uint8_t checksum; // Kontrolní součet pro zajištění integrity dat
 } dht12;
 
-
-
-
+// Funkce pro získání dat ze senzoru vlhkosti a teploty
 void getDataFromSensor()
 {
   twi_init();
+  
   // Čtení hodnot z čidla DHT12
   twi_start();
   if (twi_write((SENSOR_ADR << 1) | TWI_WRITE) == 0)
@@ -44,12 +49,7 @@ void getDataFromSensor()
     twi_write((SENSOR_ADR << 1) | TWI_READ);
     dht12.hum_int = twi_read(TWI_ACK);
     dht12.hum_dec = twi_read(TWI_NACK);
-    // dht12.hum_int = 42;
-    //dht12.hum_dec = 0;
   }
-  
-
-  
 
   twi_start();
   if (twi_write((SENSOR_ADR << 1) | TWI_WRITE) == 0)
@@ -60,9 +60,7 @@ void getDataFromSensor()
     twi_write((SENSOR_ADR << 1) | TWI_READ);
     dht12.temp_int = twi_read(TWI_ACK);
     dht12.temp_dec = twi_read(TWI_NACK);
-    
   }
-  
 
   twi_start();
   if (twi_write((SENSOR_ADR << 1) | TWI_WRITE) == 0)
@@ -76,34 +74,38 @@ void getDataFromSensor()
   twi_stop();
 }
 
+// Funkce pro získání celé části vzdušné vlhkosti ze senzoru
 float get_air_humidity_int()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // vypsání celé hodnoty procent vlhkosti vzduchu
-  return (float)dht12.hum_int ;
+  // Vrácení celé části vzdušné vlhkosti
+  return (float)dht12.hum_int;
 }
+
+// Funkce pro získání desetinné části vzdušné vlhkosti ze senzoru
 float get_air_humidity_dec()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // vypsání desetiné hodnoty procent vlhkosti vzduchu
-  return  (float)dht12.hum_dec / 10.0;
+  // Vrácení desetinné části vzdušné vlhkosti
+  return (float)dht12.hum_dec / 10.0;
 }
 
+// Funkce pro získání celé části vzdušné teploty ze senzoru
 float get_air_temp_int()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // vypsání celé hodnoty teploty
- return (float)dht12.temp_int;
-
+  // Vrácení celé části vzdušné teploty
+  return (float)dht12.temp_int;
 }
+
+// Funkce pro získání desetinné části vzdušné teploty ze senzoru
 float get_air_temp_dec()
 {
   // Zavolání funkce pro čtení hodnot z čidla
   getDataFromSensor();
-  // vypsání desetinné hodnoty teploty
- return (float)dht12.temp_dec;
-
+  // Vrácení desetinné části vzdušné teploty
+  return (float)dht12.temp_dec;
 }
