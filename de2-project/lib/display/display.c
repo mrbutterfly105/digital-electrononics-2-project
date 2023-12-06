@@ -19,13 +19,14 @@ void init_display()
     oled_init(OLED_DISP_ON);
 }
 
-void set_default(){
+void set_default()
+{
     state = DEFAULT;
 }
 
 void check_for_setup()
 {
-    if (update_counter % 3 == 0 && get_button_state(ENTER) == 0)
+    if (update_counter % 2 == 0 && get_button_state(ENTER) == 0)
     {
         if (state == DEFAULT)
         {
@@ -43,6 +44,7 @@ void check_for_setup()
         {
             state = DEFAULT;
         }
+        oled_clrscr();
     }
 }
 
@@ -79,7 +81,6 @@ void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec
     {
         update_counter == 0;
     }
-
     uart_puts("\n");
 }
 
@@ -88,22 +89,62 @@ void adjust(int16_t *value)
     if (get_button_state(LEFT) == 0)
     {
         (*value)--;
+         oled_clrscr();
     }
     else if (get_button_state(RIGHT) == 0)
     {
         (*value)++;
+         oled_clrscr();
     }
+   
 }
 
 void print_setup_max_temp(int16_t max_temp)
 {
+
+    oled_charMode(DOUBLESIZE);
+    oled_gotoxy(0, 0);
+    oled_puts("Max temp");
+    oled_drawLine(0, 20, 120, 20, WHITE);
+
+    //* display temprature
+    oled_gotoxy(6, 4);
+    itoa(max_temp,string,10);
+    oled_puts(string);
+    oled_puts("C");
+
+    oled_display();
 }
 
-void print_setup_min_temp()
+void print_setup_min_temp(uint16_t min_temp)
 {
+    oled_charMode(DOUBLESIZE);
+    oled_gotoxy(0, 0);
+    oled_puts("Min temp");
+    oled_drawLine(0, 20, 120, 20, WHITE);
+
+    //* display temprature
+    oled_gotoxy(6, 4);
+    itoa(min_temp,string,10);
+    oled_puts(string);
+    oled_puts("C");
+
+    oled_display();
 }
-void print_setup_min_tank_fill()
+void print_setup_min_tank_fill(int16_t tank_fill)
 {
+    oled_charMode(DOUBLESIZE);
+    oled_gotoxy(0, 0);
+    oled_puts("Tank fill");
+    oled_drawLine(0, 20, 120, 20, WHITE);
+
+    //* display temprature
+    oled_gotoxy(6, 4);
+    itoa(tank_fill,string,10);
+    oled_puts(string);
+    oled_puts("%");
+
+    oled_display();
 }
 
 void print_default(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec, int16_t s_hum, int16_t tank_fill)
@@ -156,6 +197,7 @@ void print_default(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec,
     itoa(tank_fill, string, 10);
     oled_puts("tank  - ");
     oled_puts(string);
+    
     oled_putc('%');
 
     // oled_drawLine(x1, y1, x2, y2, color)
