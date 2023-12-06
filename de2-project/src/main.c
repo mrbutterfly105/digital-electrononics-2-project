@@ -1,3 +1,4 @@
+
 /* Includes ----------------------------------------------------------*/
 #include <HumTempSensor.h>
 #include <controls.h>
@@ -10,6 +11,9 @@
 #include <stdlib.h>
 // #include <font.h>
 #include <buttons.h>
+  
+#include <soil.h>  
+#include <stdio.h>
 
 // end includes
 
@@ -43,6 +47,12 @@ char string[10];
 int main(void)
 {
 
+  //! -----------
+      
+    uint8_t soil = getSoilHumidityPercentage();
+    uint8_t tank = getTankLevelPercentage();
+  //! -----------
+  
     // inicialize knihoven
     twi_init();
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
