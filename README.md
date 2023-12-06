@@ -26,20 +26,43 @@ Insert descriptive text and schematic(s) of your implementation.
 
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
 
-- něco takovýho sem dát a upravit:
+- dodělat:
 
 ```c
-   DE2-PROJECT          // PlatfomIO project
+   DE2-PROJECT          
    ├── include         // Included file(s)
    │   └── timer.h
    ├── lib             // Libraries
-   │   └── gpio        // Your GPIO library
+   │   ├── gpio        // Your GPIO library
    │   │   ├── gpio.c
    │   │   └── gpio.h
-   │   └── lcd         // Peter Fleury'sLCD library
-   │       ├── lcd.c
-   │       ├── lcd.h
-   │       └── lcd_definitions.h
+   │   ├── oled        
+   │   │   ├── oled.c
+   │   │   ├── oled.h
+   │   │   └── font.h
+   │   ├── uart       
+   │   │   ├── uart.c
+   │   │   └── uart.h
+   │   ├── twi       
+   │   │   ├── twi.c
+   │   │   └── twi.h
+   │   ├── soil       
+   │   │   ├── soil.c
+   │   │   └── soil.h
+   │   ├── controls       
+   │   │   ├── controls.c
+   │   │   └── controls.
+   │   ├── HumTempSensor       
+   │   │   ├── HumTempSensor.c
+   │   │   └── HumTempSensor.h
+   │   ├── rtc       
+   │   │   ├── rtc.c
+   │   │   └── rtc.h
+   │   ├── display       
+   │   │   ├── display.c
+   │   │   └── display.h
+   │
+   │
    ├── src             // Source file(s)
    │   └── main.c
    ├── test            // No need this
