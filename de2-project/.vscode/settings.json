@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "gpio.h": "c",
-        "uart.h": "c"
+        "uart.h": "c",
+        "humtempsensor.h": "c"
     }
 }

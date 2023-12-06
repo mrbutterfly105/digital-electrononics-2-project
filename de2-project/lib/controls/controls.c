@@ -21,26 +21,26 @@
   
 
 void Low_water_LED(int Low_watter_LED_State) {
-   GPIO_mode_output(&DDRB, LED_GREEN); // Nastaví pin LED jako výstup
+   GPIO_mode_output(&DDRD, LED_GREEN); // Nastaví pin LED jako výstup
    // sei();  // Povolí globální přerušení (Potřebné pro UART)
     if (Low_watter_LED_State == 1) {
       //uart_puts("R1 \r\n"); // Pošle zprávu oznamující, že červená LED je zapnuta
-      GPIO_write_high(&PIND, LED_GREEN);  // Zapne červenou LED
+      GPIO_write_high(&PORTD, LED_GREEN);  // Zapne červenou LED
     } else if (Low_watter_LED_State == 0) {
        //uart_puts("R0 \r\n"); // Pošle zprávu oznamující, že červená LED je vypnuta
-      GPIO_write_low(&PIND, LED_GREEN); // Vypne červenou LED
+      GPIO_write_low(&PORTD, LED_GREEN); // Vypne červenou LED
     } 
 }
 
 
 void bad_temp_LED(int bad_temp_LED_State) {
-   GPIO_mode_output(&DDRB, LED_RED); // Nastavení pin LED jako výstup
+   GPIO_mode_output(&DDRD, LED_RED); // Nastavení pin LED jako výstup
     //sei();  // Povolí globální přerušení (Potřebné pro UART)
     if (bad_temp_LED_State == 1) {
        //uart_puts("G1 \r\n"); // Pošle zprávu oznamující, že zelená LED je zapnuta
-     GPIO_write_high(&PIND, LED_RED); // Zapne zelenou LED
+     GPIO_write_high(&PORTD, LED_RED); // Zapne zelenou LED
     } else if (bad_temp_LED_State == 0) {
        //uart_puts("G0 \r\n"); // Pošle zprávu oznamující, že zelená LED je vypnuta
-       GPIO_write_low(&PIND, LED_RED); // Vypne zelenou LED
+       GPIO_write_low(&PORTD, LED_RED); // Vypne zelenou LED
     }
 }

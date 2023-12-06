@@ -1,10 +1,3 @@
-
-#ifndef F_CPU
-# define F_CPU 16000000  // CPU frequency in Hz required for UART_BAUD_SELECT
-#endif
-
-
-
 /* Includes ----------------------------------------------------------*/
 #include <HumTempSensor.h>
 #include <controls.h>
@@ -15,7 +8,7 @@
 #include <twi.h>
 #include <dsiplay.h>
 #include <stdlib.h>
-//#include <font.h>
+// #include <font.h>
 #include <buttons.h>
 
 // end includes
@@ -25,14 +18,14 @@
 #define F_CPU 16000000
 #endif
 
-// end defines
-
-// inicializace pinů a globálních proměnných
-
 // int soil_humidity = get_soil_humidytiy();
-// int air_humidity = get_air_humidity();
+int air_humidity_int = 0;
+int air_humidity_dec = 0;
+int air_temp_int = 0;
+int air_temp_dec = 0;
+
 // int air_temp = get_air_temp();
-// int tank_level = get_tank_level(); // in %
+int tank_level = 0;
 // int room_light = get_room_light();
 // int16_t lamp_intenzity = 0;
 
@@ -40,12 +33,12 @@
 // int8_t low_water_level = 0;
 // int8_t bad_temp = 0;
 
-int16_t max_temp = 30;
-int16_t min_temp = 30;
+int16_t max_temp = 30; // in C
+int16_t min_temp = 10; // in C
 int16_t min_tank_fill = 10; // in %
 
 //! for debug
-char stringtest[10];
+char string[10];
 
 int main(void)
 {
@@ -54,11 +47,16 @@ int main(void)
     twi_init();
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
 
-
-  
-
     init_display();
     init_buttons();
+
+    air_humidity_int = get_air_humidity_int();
+    air_humidity_dec = get_air_humidity_dec();
+    air_temp_int = get_air_temp_int();
+    air_temp_dec = get_air_temp_dec();
+
+    //! tank_level = getTankLevelPercentage();
+    tank_level =11;
 
     sei();
     TIM2_OVF_16MS;
@@ -70,98 +68,43 @@ int main(void)
     }
 
     return 0;
-
 }
 
 static uint8_t j = 0;
 
+void update_led()
+{
+    uint16_t air_temp = air_temp_int + air_temp_dec / 10;
+    if (tank_level < min_tank_fill){
+        Low_water_LED(1);
+    }
+    else{
+        Low_water_LED(0);
+    }
+    if (air_temp < min_temp || air_temp > max_temp){
+        bad_temp_LED(1);
+    }
+    else{
+        bad_temp_LED(0);
+    }
+}
+
 void main_process()
 {
+
+    air_humidity_int = get_air_humidity_int();
+    air_humidity_dec = get_air_humidity_dec();
+    air_temp_int = get_air_temp_int();
+    air_temp_dec = get_air_temp_dec();
+
+    update_led();
     check_for_setup();
-    update_display(j, j, j, j, j, j, &max_temp, &min_temp, &min_tank_fill);
-
-    // test
-    // uart_puts("\n");
-    // itoa(max_temp, stringtest, 10);
-    // uart_puts(stringtest);
-
-    // itoa(min_temp, stringtest, 10);
-    // uart_puts(stringtest);
-
-    // itoa(min_tank_fill, stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts("\n");
-    // end test
-
-    // test
-
-    // uint8_t sw = read_switch();
-    // char stringtest[2];
-    // itoa(sw, stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts("sw \n");
-
-    // uint8_t clk = read_clk();
-    // itoa(clk, stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts(" clk \n");
-
-    // end test
+    update_display(air_temp_int, air_temp_dec, air_humidity_int, air_humidity_dec, j, j, &max_temp, &min_temp, &min_tank_fill);
 }
 
 ISR(TIMER2_OVF_vect)
 {
 
-    // char stringtest[2];
-
-    // itoa(get_button_state(LEFT), stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts("\n");
-
-    // itoa(get_button_state(RIGHT), stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts("\n");
-
-    // itoa(get_button_state(ENTER), stringtest, 10);
-    // uart_puts(stringtest);
-    // uart_puts("\n");
-
-
-  return 0;
-}
-
-ISR(TIMER1_OVF_vect)
-{
-
-char string[2]; 
-float air_humidity_int;
-float air_temp_int;
-float air_humidity_dec;
-float air_temp_dec;
-air_humidity_int  = get_air_humidity_int();
-air_temp_int = get_air_temp_int();
-air_humidity_dec = get_air_humidity_dec();
-air_temp_dec = get_air_temp_dec();
-
-
-
-uint16_t tank_level =getTankLevelPercentage();
-//int low_water_level = 0; 
-//int bad_temp = 0;
-uint16_t air_temp = air_temp_int + air_temp_dec/10;
-
-if (tank_level < 25){
-   Low_water_LED(1);
-}else{
-   Low_water_LED(0);
-}
-
-if (air_temp < 10 || air_temp > 35){
-   bad_temp_LED(1);
-}else{
-   bad_temp_LED(0);
-}
-  
     //* refresh rate
     if (j == 10)
     {
@@ -169,4 +112,6 @@ if (air_temp < 10 || air_temp > 35){
         j = 0;
     }
     j++;
+
+    return 0;
 }
