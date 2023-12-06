@@ -26,6 +26,39 @@ Insert descriptive text and schematic(s) of your implementation.
 
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
 
+- něco takovýho sem dát a upravit:
+
+```c
+   DE2-PROJECT          // PlatfomIO project
+   ├── include         // Included file(s)
+   │   └── timer.h
+   ├── lib             // Libraries
+   │   └── gpio        // Your GPIO library
+   │   │   ├── gpio.c
+   │   │   └── gpio.h
+   │   └── lcd         // Peter Fleury'sLCD library
+   │       ├── lcd.c
+   │       ├── lcd.h
+   │       └── lcd_definitions.h
+   ├── src             // Source file(s)
+   │   └── main.c
+   ├── test            // No need this
+   └── platformio.ini  // Project Configuration File
+   ```
+
+ * Knihovna `HumTempSensor.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/soil/de2-project/lib/HumTempSensor/HumTempSensor.c) slouží ke čtení dat ze senzoru teploty vzduchu a vlhkosti vzduchu.
+ Tato komunikace probíhá na principu I2C a proto je zde použita knihovna `twi`, kterou vytvořil pan doc. Ing. Tomáš Frýza, Ph.D a používali jsem jí v průběhu předmětu Digitální elektronika 2. Funkce `getDataFromSensor()` čte data z I2C z předem nadefinovaných adres a ukládá je do struktury `DHT_values_structure`. Celé a destinné části dat vlhkosti a teploty jsou uloženy jako bajty spolu s kontrolním součtem.
+ Dále má tato knihovna funkce které vrácí tyto jednotlivé části:
+ <br>
+  - `get_air_humidity_int()`: Vrací celou část vzdušné vlhkosti.
+  - `get_air_humidity_dec()`: Vrací desetinnou část vzdušné vlhkosti.
+  - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
+  - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
+   <br>
+    <br>
+
+  Hlavičkový soubor  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) slouží k deklaraci a definici funkcí aby následně kompilátor věděl jaké 
+
 ## Instructions
 
 Write an instruction manual for your application, including photos and a link to a short app video.
