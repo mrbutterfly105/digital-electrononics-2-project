@@ -1,6 +1,13 @@
 
-// includes
+#ifndef F_CPU
+# define F_CPU 16000000  // CPU frequency in Hz required for UART_BAUD_SELECT
+#endif
 
+
+
+/* Includes ----------------------------------------------------------*/
+#include <HumTempSensor.h>
+#include <controls.h>
 #include "timer.h"
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -47,6 +54,9 @@ int main(void)
     twi_init();
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
 
+
+  
+
     init_display();
     init_buttons();
 
@@ -60,6 +70,7 @@ int main(void)
     }
 
     return 0;
+
 }
 
 static uint8_t j = 0;
@@ -115,6 +126,42 @@ ISR(TIMER2_OVF_vect)
     // uart_puts(stringtest);
     // uart_puts("\n");
 
+
+  return 0;
+}
+
+ISR(TIMER1_OVF_vect)
+{
+
+char string[2]; 
+float air_humidity_int;
+float air_temp_int;
+float air_humidity_dec;
+float air_temp_dec;
+air_humidity_int  = get_air_humidity_int();
+air_temp_int = get_air_temp_int();
+air_humidity_dec = get_air_humidity_dec();
+air_temp_dec = get_air_temp_dec();
+
+
+
+uint16_t tank_level =getTankLevelPercentage();
+//int low_water_level = 0; 
+//int bad_temp = 0;
+uint16_t air_temp = air_temp_int + air_temp_dec/10;
+
+if (tank_level < 25){
+   Low_water_LED(1);
+}else{
+   Low_water_LED(0);
+}
+
+if (air_temp < 10 || air_temp > 35){
+   bad_temp_LED(1);
+}else{
+   bad_temp_LED(0);
+}
+  
     //* refresh rate
     if (j == 10)
     {
