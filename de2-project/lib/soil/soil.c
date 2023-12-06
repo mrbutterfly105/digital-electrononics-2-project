@@ -28,7 +28,7 @@ uint16_t getTankLevelPercentage() {
     float percent;              // percentage calculation handling
     uint8_t pct;                // return value
     uint16_t max = 512;         // 0-1024 ... 0-5V, set maximum level of ADC, which will equal to 100 %, e.g. max voltage is 2,5V, then value is 2,5/5 * 1024 = 
-    uint16_t min = 246;         // 0-1024, set minimum voltage corresponding to 0 %
+    uint16_t min = 264;         // 0-1024, set minimum voltage corresponding to 0 %
     ADMUX &= ~(1<<REFS0); ADMUX |= (1<<REFS0); // Set reference Vref to AVCC, REFS1 = 0, REFS0 = 1
     ADMUX &= ~((1<<MUX3) | (1<<MUX2) | (1<<MUX1)); ADMUX |= (1<<MUX0); // Set ADC input source to ADC1, MUX3:0 = 0001
     ADMUX &= ~(1<<ADLAR);       // Set result register to be right adjusted, ADLAR = 0
@@ -45,9 +45,11 @@ uint16_t getTankLevelPercentage() {
 }
 
 void pumpTurnOff() {
-    GPIO_write_low(&DDRB, PB0);
+    GPIO_mode_output(&DDRB, PB0);
+    GPIO_write_low(&PORTB, PB0);
 }
 
 void pumpTurnOn() {
-    GPIO_write_high(&DDRB, PB0);
+    GPIO_mode_output(&DDRB, PB0);
+    GPIO_write_high(&PORTB, PB0);
 }
