@@ -88,4 +88,5 @@ void rtc_read_hours(uint8_t *hours) {
   rtc_start();
   rtc_write((RTC << 1) | 1);
   *hours = bcdToDec(rtc_read() & 0x3F); 
+  rtc_stop();
 }

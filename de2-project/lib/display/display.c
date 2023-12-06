@@ -1,6 +1,7 @@
 #include <oled.h>
 #include <uart.h>
 #include <buttons.h>
+#include <stdio.h>
 
 #define DISPLAY_ADDR
 
@@ -55,33 +56,27 @@ void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec
     {
     case DEFAULT:
         print_default(temp, temp_dec, hum, hum_dec, s_hum, tank_fill);
-        uart_puts("default");
         break;
     case SETUP_MAX_TEMP:
         adjust(max_temp);
-
         print_setup_max_temp(*max_temp);
-        uart_puts("max temp");
         break;
     case SETUP_MIN_TEMP:
         adjust(min_temp);
-
         print_setup_min_temp(*min_temp);
-        uart_puts("min temp");
         break;
     case SETUP_MIN_TANK_FILL:
         adjust(min_tank);
-
         print_setup_min_tank_fill(*min_tank);
-        uart_puts("tank fill");
         break;
     }
+
     update_counter++;
-    if (update_counter == 100)
+
+    if (update_counter > 100)
     {
-        update_counter == 0;
+        update_counter = 0;
     }
-    uart_puts("\n");
 }
 
 void adjust(int16_t *value)
@@ -89,14 +84,13 @@ void adjust(int16_t *value)
     if (get_button_state(LEFT) == 0)
     {
         (*value)--;
-         oled_clrscr();
+        oled_clrscr();
     }
     else if (get_button_state(RIGHT) == 0)
     {
         (*value)++;
-         oled_clrscr();
+        oled_clrscr();
     }
-   
 }
 
 void print_setup_max_temp(int16_t max_temp)
@@ -109,7 +103,7 @@ void print_setup_max_temp(int16_t max_temp)
 
     //* display temprature
     oled_gotoxy(6, 4);
-    itoa(max_temp,string,10);
+    itoa(max_temp, string, 10);
     oled_puts(string);
     oled_puts("C");
 
@@ -125,7 +119,7 @@ void print_setup_min_temp(uint16_t min_temp)
 
     //* display temprature
     oled_gotoxy(6, 4);
-    itoa(min_temp,string,10);
+    itoa(min_temp, string, 10);
     oled_puts(string);
     oled_puts("C");
 
@@ -140,7 +134,7 @@ void print_setup_min_tank_fill(int16_t tank_fill)
 
     //* display temprature
     oled_gotoxy(6, 4);
-    itoa(tank_fill,string,10);
+    itoa(tank_fill, string, 10);
     oled_puts(string);
     oled_puts("%");
 
@@ -197,7 +191,7 @@ void print_default(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec,
     itoa(tank_fill, string, 10);
     oled_puts("tank  - ");
     oled_puts(string);
-    
+
     oled_putc('%');
 
     // oled_drawLine(x1, y1, x2, y2, color)
