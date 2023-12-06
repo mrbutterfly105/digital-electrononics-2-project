@@ -26,8 +26,8 @@ Insert descriptive text and schematic(s) of your implementation.
 
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
 
- * Knihovna [HumTempSensor](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/soil/de2-project/lib/HumTempSensor/HumTempSensor.c) slouží ke čtení dad ze senzoru teploty vzduchu a vlhkosti vzduchu.
- Tato kominikace probíhá na principu I2C a proto je zde použita knihovna `twi`, kterou vytvořil pan Tomas Fryza a používali jsem jí v průběhu předmětu Digitální elektronika 2.
+ * Knihovna `HumTempSensor.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/soil/de2-project/lib/HumTempSensor/HumTempSensor.c) slouží ke čtení dad ze senzoru teploty vzduchu a vlhkosti vzduchu.
+ Tato kominikace probíhá na principu I2C a proto je zde použita knihovna `twi`, kterou vytvořil pan doc. Ing. Tomáš Frýza, Ph.D a používali jsem jí v průběhu předmětu Digitální elektronika 2.
 
 ## Instructions
 
