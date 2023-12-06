@@ -66,9 +66,9 @@ float air_temp_int;
 float air_humidity_dec;
 float air_temp_dec;
 air_humidity_int  = get_air_humidity_int();
-air_temp_int =0;// get_air_temp_int();
+air_temp_int = get_air_temp_int();
 air_humidity_dec = get_air_humidity_dec();
-air_temp_dec =0;// get_air_temp_dec();
+air_temp_dec = get_air_temp_dec();
 uart_puts("Temperature: \r\n");
 itoa(air_temp_int, string, 10);
 uart_puts(string);
@@ -85,10 +85,10 @@ uart_puts(string);
 uart_puts(" %\r\n");
 
 
-int tank_level =50;// get_tank_level(); // in %
+uint16_t tank_level =getTankLevelPercentage();
 //int low_water_level = 0; 
 //int bad_temp = 0;
-int air_temp = air_temp_int + air_temp_dec/10;
+uint16_t air_temp = air_temp_int + air_temp_dec/10;
 
 if (tank_level < 25){
    Low_water_LED(1);
