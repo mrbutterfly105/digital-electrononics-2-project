@@ -30,8 +30,8 @@ int main (void){
     
 
     // UART
-    uart_init(UART_BAUD_SELECT(9600, F_CPU));
-    uart_puts("I2C sensor detected\r\n");
+    // uart_init(UART_BAUD_SELECT(9600, F_CPU));
+    // uart_puts("I2C sensor detected\r\n");
     //sei();  // Needed for UART
       
     
@@ -39,16 +39,16 @@ int main (void){
     
 
     
-    TIM1_OVF_1SEC
-    TIM1_OVF_ENABLE
+    // TIM1_OVF_1SEC
+    // TIM1_OVF_ENABLE
 
-    sei();
+    // sei();
 
 
 while(1){
 // tady bude všechna magie
 
-          
+     ;     
 
   
 }
@@ -69,20 +69,7 @@ air_humidity_int  = get_air_humidity_int();
 air_temp_int = get_air_temp_int();
 air_humidity_dec = get_air_humidity_dec();
 air_temp_dec = get_air_temp_dec();
-uart_puts("Temperature: \r\n");
-itoa(air_temp_int, string, 10);
-uart_puts(string);
-uart_puts(".");
-itoa(air_temp_dec, string, 10);
-uart_puts(string);
-uart_puts(" °C\r\n");
-uart_puts("Humidity: \r\n");
-itoa(air_humidity_int, string, 10);
-uart_puts(string);
-uart_puts(".");
-itoa(air_humidity_dec, string, 10);
-uart_puts(string);
-uart_puts(" %\r\n");
+
 
 
 uint16_t tank_level =getTankLevelPercentage();
