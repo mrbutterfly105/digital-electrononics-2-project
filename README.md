@@ -21,6 +21,7 @@ Insert descriptive text and schematic(s) of your implementation.
 
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 
+![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/SCHEMA.svg)
 
 ## Software description
 
