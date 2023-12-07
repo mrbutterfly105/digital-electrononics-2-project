@@ -1,4 +1,3 @@
-![SCHEMA](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/2a090311-296c-424d-bf95-1b7b28f9a991)
 
 # Smart plant watering system and data logger 
 
@@ -20,6 +19,9 @@ Enter a description of the problem and how to solve it.
 Insert descriptive text and schematic(s) of your implementation.
 
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
+
+![SCHEMA](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/2a090311-296c-424d-bf95-1b7b28f9a991)
+
 
 
 
