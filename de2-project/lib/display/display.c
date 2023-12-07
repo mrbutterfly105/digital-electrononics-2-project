@@ -3,7 +3,9 @@
 #include <buttons.h>
 #include <stdio.h>
 
+#ifdef DISPLAY_ADDR
 #define DISPLAY_ADDR
+#endif
 
 #define DEFAULT 0
 #define SETUP_MAX_TEMP 1
@@ -46,36 +48,6 @@ void check_for_setup()
             state = DEFAULT;
         }
         oled_clrscr();
-    }
-}
-
-void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec, int16_t s_hum, int16_t tank_fill,
-                    int16_t *max_temp, int16_t *min_temp, int16_t *min_tank)
-{
-    switch (state)
-    {
-    case DEFAULT:
-        print_default(temp, temp_dec, hum, hum_dec, s_hum, tank_fill);
-        break;
-    case SETUP_MAX_TEMP:
-        adjust(max_temp);
-        print_setup_max_temp(*max_temp);
-        break;
-    case SETUP_MIN_TEMP:
-        adjust(min_temp);
-        print_setup_min_temp(*min_temp);
-        break;
-    case SETUP_MIN_TANK_FILL:
-        adjust(min_tank);
-        print_setup_min_tank_fill(*min_tank);
-        break;
-    }
-
-    update_counter++;
-
-    if (update_counter > 100)
-    {
-        update_counter = 0;
     }
 }
 
@@ -199,4 +171,33 @@ void print_default(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec,
 
     // Copy buffer to display RAM
     oled_display();
+}
+void update_display(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec, int16_t s_hum, int16_t tank_fill,
+                    int16_t *max_temp, int16_t *min_temp, int16_t *min_tank)
+{
+    switch (state)
+    {
+    case DEFAULT:
+        print_default(temp, temp_dec, hum, hum_dec, s_hum, tank_fill);
+        break;
+    case SETUP_MAX_TEMP:
+        adjust(max_temp);
+        print_setup_max_temp(*max_temp);
+        break;
+    case SETUP_MIN_TEMP:
+        adjust(min_temp);
+        print_setup_min_temp(*min_temp);
+        break;
+    case SETUP_MIN_TANK_FILL:
+        adjust(min_tank);
+        print_setup_min_tank_fill(*min_tank);
+        break;
+    }
+
+    update_counter++;
+
+    if (update_counter > 100)
+    {
+        update_counter = 0;
+    }
 }

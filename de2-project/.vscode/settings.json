@@ -2,6 +2,7 @@
     "files.associations": {
         "gpio.h": "c",
         "uart.h": "c",
-        "humtempsensor.h": "c"
+        "humtempsensor.h": "c",
+        "io.h": "c"
     }
 }
