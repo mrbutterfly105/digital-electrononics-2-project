@@ -2,7 +2,7 @@
 
 #include <gpio.h>
 #define SENZOR_PIN PC1 // A1
-#define LAMP PB2       // D3
+#define LAMP PB2       // D10
 
 char time_string[9];
 char senzor[10];
