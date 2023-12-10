@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 #define SENZOR_PIN PC1 // A1
-#define LAMP PB2       // D3
+#define LAMP PB2       // D10
 
 void light_init();
 uint16_t get_ambient_light_state();
