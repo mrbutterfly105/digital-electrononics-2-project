@@ -7,6 +7,7 @@
 #define RTC 0x68
 
 uint8_t bcdToDec(uint8_t val);
+uint8_t decToBcd(uint8_t val);
 
 // headers
 void rtc_init();
