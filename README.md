@@ -7,7 +7,7 @@
 * Tomáš Paulysko (responsible for display and encoder)
 * Martin Mička (responsible for light sensor and lamp)
 * Tomáš Husslik (responsible for soil moisture sensors and watering)
-* Jakub Pachel(responsible for thermometer and humidity sinsor, control lights)
+* Jakub Pachel(responsible for thermometer and humidity sensor, control lights)
 
 ## Theoretical description and explanation
 
