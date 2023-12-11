@@ -74,10 +74,10 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
  Tato komunikace probíhá na principu I2C a proto je zde použita knihovna `twi`, kterou vytvořil pan doc. Ing. Tomáš Frýza, Ph.D a používali jsem jí v průběhu předmětu Digitální elektronika 2. Funkce `getDataFromSensor()` čte data z I2C z předem nadefinovaných adres a ukládá je do struktury `DHT_values_structure`. Celé a destinné části dat vlhkosti a teploty jsou uloženy jako bajty spolu s kontrolním součtem.
  Dále má tato knihovna funkce které vrácí tyto jednotlivé části:
  <br>
-  - `get_air_humidity_int()`: Vrací celou část vzdušné vlhkosti.
-  - `get_air_humidity_dec()`: Vrací desetinnou část vzdušné vlhkosti.
-  - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
-  - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
+   - `get_air_humidity_int()`: Vrací celou část vzdušné vlhkosti.
+   - `get_air_humidity_dec()`: Vrací desetinnou část vzdušné vlhkosti.
+   - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
+   - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
    <br>
     <br>
 
