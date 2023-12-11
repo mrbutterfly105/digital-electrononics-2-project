@@ -1,3 +1,10 @@
+/***********************************************************************
+ * 
+ * RTC library for real time clock functions. 
+ *
+ * This work is licensed under the terms of the MIT license.
+ *
+ **********************************************************************/
 #ifndef RTC_H
 #define RTC_H
 
