@@ -1,3 +1,10 @@
+/***********************************************************************
+ * 
+ * Light library for functions regarding light and lamp.
+ *
+ * This work is licensed under the terms of the MIT license.
+ *
+ **********************************************************************/
 // light_control.h
 
 #define LIGHT_CONTROL_H
