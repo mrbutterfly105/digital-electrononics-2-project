@@ -33,7 +33,8 @@ Hardware našeho projektu je ovládací jednotka Arduino UNO od firmy Atmel.
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/SCHEMA.svg)
 
 
-![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/30a88e70-ef80-431f-9282-c429e5278f68)
+
+![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/24e787b6-26b1-4c22-89d5-f894bc44e786)
 
 ## Software description
 
