@@ -81,9 +81,11 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    │   ├── pot       
    │   │   ├── pot.c
    │   │   └── pot.h
+<!---
    │   ├── rtc       
    │   │   ├── rtc.c
    │   │   └── rtc.h
+-->
    │   └── light       
    │       ├── light.c
    │       └── light.h
