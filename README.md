@@ -81,6 +81,9 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    <br>
 V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
+### Rozsvěcování kontrolek malého obashu nádrže a špatné teploty
+* Knihovna `controls.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/controls/controls.c) Podle stavu rozsvěcí a zhasíná jednotlivé jednotlivé kontrolky. Stav se přiřazuje v knihovně `pot.c` :[library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project//lib/pot/pot.c).
+
 ## Instructions
 
 Write an instruction manual for your application, including photos and a link to a short app video.
