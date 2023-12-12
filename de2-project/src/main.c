@@ -23,7 +23,7 @@ int main(void)
     {
         // itoa(j, string, 10);
         // uart_puts(string);
-         uart_puts(".");
+         uart_puts("");
 
         if (j > 1)
         {

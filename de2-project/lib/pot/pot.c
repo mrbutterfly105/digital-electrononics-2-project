@@ -32,7 +32,7 @@ int tank_level = 0;
 
 int16_t max_temp = 30;      // in C
 int16_t min_temp = 10;      // in C
-int16_t min_tank_fill = 10; // in %
+int16_t min_tank_fill = 30; // in %
 
 uint16_t hours = 6;
 uint16_t minutes = 59;
@@ -61,6 +61,10 @@ void update_led()
     {
         bad_temp_LED(0);
     }
+}
+
+update_pump(){
+    
 }
 
 void pot_init()
