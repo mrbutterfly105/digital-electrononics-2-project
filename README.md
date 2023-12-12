@@ -13,7 +13,10 @@ Tenhle projekt je zakončující projekt předmětu [Digitální elektronika 2](
 
 ## Teoretický popis a vysvětlení
 
-Enter a description of the problem and how to solve it:
+<!---
+Nevím co přesně mělo být zde tak jsem se ten produkt pokusil trochu prodat
+-->
+
 
 Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Péče o rostlinu dokáže být velice obtížná činnost. Někdo to má jako koníček ale zdaleka né každého baví zaždodení zalévání a sledování počasí aby jim jejich rostlina například nezmrzla. Proto náš tým vytvořil tento projek díky němuž pěstování kytek nebylo nikdy jednodušší. Stačí doplňovat nádrž na vodu na což vás sama upozorní kontrolka kterou má náš produkt v sobě zabudovaný. Druhá kontrolka vás upozorní pokud jsou pro rostlinu nepříznivé teplotní podmínky. Rozsah teplotních podmínek pro jednotlivé kytky a hranice plnosti nádrže při které chcte aby vás produkt upozornil na nutnost doplnění jsou také individuální. Proto je náš produkt doplněn o displej na kterém se přehledně zobrazují hodnoty z čidel ale hlavně díky 3 tlačítkům si můžete nastavit prahy maximální a minimální teploty a zároveň si můžete nastavit procentuální hranici objemu nádrže při které se rozsvítí kontrolka. Nastavování pomocí tlačítek je velice intuitivní a ovládání je popsáno v sekci návod (instrukce). Dostatek vody a správná teplota není to jediné co kytky potřebují proto je náš produkt obohacen o senzor světla díky němuž produkt dokáže vyhodnotit kdy jsou špatné světelné podmínky a rozsvítí lampu.
 
