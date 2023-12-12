@@ -12,7 +12,6 @@
 /**
  * @brief Initializes the buttons by setting the corresponding pins as input with pull-up.
  */
-
 void init_buttons()
 {
     GPIO_mode_input_pullup(&DDRD, ENTER);
