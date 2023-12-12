@@ -51,7 +51,7 @@ Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připo
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
 
-Na obrázku je znázorněno jak by vypadala celková realizace chytrého květináče.
+Takto vypadá zapojení pro demonstraci funkčnosti na hodině digitální elektroniky 2. Jak by vypadala realizace celého květináče je znázorněno na tomto obrázku:
 
 
 
