@@ -38,10 +38,11 @@ Hardware našeho projektu:
   - Na pumpování vody z nádrže do květináče používáme `relé (doplnit jaký)`.
   - k ovládání používáme 3 tlačítka `tlačítka`.
   - pro zobrazování hodnot používáme `oled display`.
-  - 
+
 <!---
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
+Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/SCHEMA.svg)
 
 
@@ -51,7 +52,9 @@ Hardware našeho projektu:
 ## Softwarový popis
 
 Doxygen dokumentace dostupná ne: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
+
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
+
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
 - dodělat:
 
