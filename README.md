@@ -43,7 +43,7 @@ Hardware našeho projektu:
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
 Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
-![Page7]([https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/zapojení.svg](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg))
+![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
 
 
