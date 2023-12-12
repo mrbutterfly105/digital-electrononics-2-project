@@ -74,12 +74,12 @@ void pot_init()
 
     // rtc_init();
     // set_rtc(hours, minutes, seconds);
-    // light_init();
+    light_init();
 
-     air_humidity_int = get_air_humidity_int();
-     air_humidity_dec = get_air_humidity_dec();
-     air_temp_int = get_air_temp_int();
-     air_temp_dec = get_air_temp_dec();
+    air_humidity_int = get_air_humidity_int();
+    air_humidity_dec = get_air_humidity_dec();
+    air_temp_int = get_air_temp_int();
+    air_temp_dec = get_air_temp_dec();
 
     // soil_hum = getSoilHumidityPercentage();
     // tank_level = getTankLevelPercentage();
@@ -88,17 +88,20 @@ void pot_init()
 void main_process()
 {
 
-     air_humidity_int = get_air_humidity_int();
+    air_humidity_int = get_air_humidity_int();
 
-     air_humidity_dec = get_air_humidity_dec();
+    air_humidity_dec = get_air_humidity_dec();
 
-     air_temp_int = get_air_temp_int();
+    air_temp_int = get_air_temp_int();
 
-     air_temp_dec = get_air_temp_dec();
+    air_temp_dec = get_air_temp_dec();
 
-     update_led();
+    update_led();
 
-    // update_light(hours, minutes, seconds);
+    itoa(get_ambient_light_state(), string, 10);
+    uart_puts(string);
+
+    update_light(hours, minutes, seconds);
 
     // // debug
     // itoa(hours, string, 10);

@@ -1,6 +1,6 @@
 #include <gpio.h>
 
-#define SENZOR_PIN PC1 // A1
+#define SENZOR_PIN PC2 // A1
 #define LAMP PB2       // D10
 
 char time_string[9];
@@ -45,7 +45,9 @@ void set_rtc(int16_t hours, int16_t minutes, int16_t seconds)
  */
 void update_light(int16_t hours, int16_t minutes, int16_t seconds)
 {
-    if ((hours >= 18 && hours <= 23) || (hours >= 0 && hours < 7) || get_ambient_light_state() == 0)
+   // if ((hours >= 18 && hours <= 23) || (hours >= 0 && hours < 7) || get_ambient_light_state() == 0)
+    
+    if ( get_ambient_light_state() == 0)
     {
         GPIO_write_high(&PORTB, LAMP);
     }
