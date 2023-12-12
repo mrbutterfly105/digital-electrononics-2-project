@@ -79,8 +79,6 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
    - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
    <br>
-    <br>
-
 V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
 ## Instructions
