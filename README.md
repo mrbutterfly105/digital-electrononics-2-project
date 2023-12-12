@@ -144,6 +144,13 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
 ### Čtení ze senzorů vlhkosti
  * Knihovna `soil.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/soil/soil.c) zajišťuje převod analogové hodnoty na senzoru na digitální hodnotu. Obsahuje dvě funkce, které používají piny ADC0 pro senzor půdy, respektive ADC1 pro senzor vody v nádrži. Převod ADC je realizován tzv. polling způsobem. Tyto funkce vrací procentuální hodnotu vlhkosti půdy, případně hladiny v nádrži. Funkce byly zkalibrovány podle použitých senzorů. V knihovně se navíc nachází dvě funkce pro ovládání relé (pumpa), které je ovládáno pomocí digitálního pinu PB0. Relé je active low, funkce toto zohledňují. 
  * Hlavičkový soubor `soil.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/soil/soil.h) obsahuje deklarace funkcí.
+### Knivna pot.c, display a tlačítka
+
+
+* Knihova `pot.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/pot/pot.c) je knihovna která se stará o celý chod programu. Obsahuje dvě hlavní funkce `main_process()`[](), ve které běží celá logika programu. Druhá hlavní funkce je `pot_init()`[]() ve které se inicializují všechny ostatní knihovny. 
+* Knihvna `display.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/display/display.c) obsahuje všehny funkce pro obsluhu displaje. 
+
+
 ## Instrukce
 Po zapojení všech součástek k arduinu a nahrání kódu, se na oled displeji objeví hlavní menu, na kterém jsou vypsané údaje o teplotě a vlhkosti vzduchu, o vlhkosti půdy a o množství vody v nádrži. Po prvním zmáčknutí bílého tlačítka se na displeji z menu dostaneme na nastavení maximální povolené teploty. Tuto teplotu můžeme změnit pomocí červeného a černého tlačítka, při zmáčknutí červeného tlačítka se teplota sníží, naopak při zmáčknutí černého tlačítka se teplota zvýší. Tímto způsobem si nastavíme požadovanou maximální teplotu vzduchu. Při dalším zmáčknutí bílého tlačítka se dostaneme na nastavení minimální možné teploty, kterou nastavíme stejně za použití tlačítek. Pokud teplota ze senzoru nebude v rozmezí rozsvítí se červená kontrolka.
 Při dalším prokliku bílého tlačítka se dostaneme do nastavení, ve kterém nastavíme při jaké plnosti nádrže na vodu začne svítit zelená kontrolka, která značí málo vody v nádrži.
@@ -151,6 +158,8 @@ Po dalším zmáčknutí bílého tlačítka se dostáváme zpátky do menu.
 Toto jsou jediné věci, které uživatel sám nastaví, jinak vše běží automaticky.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Foto%20zapojení.jpg)
+
+<a href="https://www.youtube.com/watch?v=wBUNLNUlrbI"><h3>Video návod</h3></a>
 
 
 ## Zdroje
