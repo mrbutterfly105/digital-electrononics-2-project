@@ -45,7 +45,7 @@ Hardware našeho projektu:
 <!---
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
-Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu. I2C komunikaci vyuřívá oled displej a senzor teploty a vlhkosti vzduchu. Dále náš produkt využívá 7 digitálních pinů a 3 analogové.
+Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu. I2C komunikaci využívá oled displej a senzor teploty a vlhkosti vzduchu. Dále náš produkt využívá 7 digitálních pinů a 3 analogové.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
