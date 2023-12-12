@@ -38,7 +38,7 @@ Hardware našeho projektu:
   - Lampa která se rozsvěcí v závislosti na dostatek světla je v našem provedení `modrá led dioda`.
   - Kontrolka která se rozsvítí při nepříznivých teplotních podmínkách `červená led dioda`.
   - Kontrolka která se rozsvítí při malém objemu nádrže na vodu `zelená led dioda`.
-  - Na pumpování vody z nádrže do květináče používáme `relé (doplnit jaký)`.
+  - Na pumpování vody z nádrže do květináče používáme `Jednokanálový relé modul - 5V`.
   - k ovládání používáme 3 tlačítka `tlačítka`.
   - pro zobrazování hodnot používáme `oled display`.
 
