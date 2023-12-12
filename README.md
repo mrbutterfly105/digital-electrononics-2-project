@@ -155,3 +155,4 @@ Toto jsou jediné věci, které uživatel sám nastaví, jinak vše běží auto
 1. Learning material from Digital electronics 2 course.
 2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
 3. Arduino Uno board [documentation](https://docs.arduino.cc/hardware/uno-rev3)
+4. [Basic syntax](https://www.markdownguide.org/basic-syntax/?fbclid=IwAR3edqHBhttWhvDszvdMqhuNkEclzyDmhEbuplxvEvYDWxaCE9yKuwSAkz0) for GitHub documentation.
