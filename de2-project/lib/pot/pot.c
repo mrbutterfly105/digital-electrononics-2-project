@@ -66,13 +66,13 @@ void update_led()
     }
 }
 
-<<<<<<< Updated upstream
+
 /**
  * @brief Placeholder for the pump update function.
  */
-update_pump(){
+
     
-=======
+
 void update_pump()
 {
     if (soil_hum < 30 && tank_level > 10)
@@ -83,7 +83,6 @@ void update_pump()
     {
         pumpTurnOff();
     }
->>>>>>> Stashed changes
 }
 
 /**
