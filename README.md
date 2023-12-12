@@ -2,6 +2,8 @@
 
 # Smart plant watering system and data logger 
 
+Tenhle projekt je zakončující projekt předmětu [Digitální elektronika 2](https://github.com/tomas-fryza/digital-electronics-2/tree/master/labs/09-project) na VUT v Brně.
+
 ### Team members
 
 * Tomáš Paulysko (responsible for display and encoder)
