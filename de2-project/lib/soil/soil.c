@@ -20,7 +20,7 @@
  * Input(s): None, the boundaries for percentage calculation are hardcoded for the sensor
  * Returns:  Percentage value in the form of integer
  **********************************************************************/
-uint16_t getSoilHumidityPercentage() {
+uint8_t getSoilHumidityPercentage() {
     volatile uint16_t ADCvalue;                                // value returned by ADC
     float percent;                                             // percentage calculation handling
     uint8_t pct;                                               // return value
@@ -48,7 +48,7 @@ uint16_t getSoilHumidityPercentage() {
  * Input(s): None, the boundaries for percentage calculation are hardcoded for the sensor
  * Returns:  Percentage value in the form of integer
  **********************************************************************/
-uint16_t getTankLevelPercentage() {
+uint8_t getTankLevelPercentage() {
     uint16_t ADCvalue;                                                 // value returned by ADC
     float percent;                                                     // percentage calculation handling
     uint8_t pct;                                                       // return value

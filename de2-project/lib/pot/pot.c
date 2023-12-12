@@ -81,25 +81,25 @@ void pot_init()
     air_temp_int = get_air_temp_int();
     air_temp_dec = get_air_temp_dec();
 
-    // soil_hum = getSoilHumidityPercentage();
-    // tank_level = getTankLevelPercentage();
+    soil_hum = getSoilHumidityPercentage();
+    tank_level = getTankLevelPercentage();
 }
 
 void main_process()
 {
 
     air_humidity_int = get_air_humidity_int();
-
     air_humidity_dec = get_air_humidity_dec();
-
     air_temp_int = get_air_temp_int();
-
     air_temp_dec = get_air_temp_dec();
+
+    soil_hum = getSoilHumidityPercentage();
+    tank_level = getTankLevelPercentage();
 
     update_led();
 
-    itoa(get_ambient_light_state(), string, 10);
-    uart_puts(string);
+    // itoa(get_ambient_light_state(), string, 10);
+    // uart_puts(string);
 
     update_light(hours, minutes, seconds);
 

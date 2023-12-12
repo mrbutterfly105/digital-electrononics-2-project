@@ -25,14 +25,14 @@
  * @brief  Get tank fullness percentage. 
  * @return uint8_t percentage value, maximum level - 100%, minimum - 0%
  */
-uint16_t getTankLevelPercentage();
+uint8_t getTankLevelPercentage();
 
 /* Function prototypes -----------------------------------------------*/
 /**
  * @brief  Get soil moisture percentage. 
  * @return uint8_t percentage value, maximum moisture - 100%, minimum - 0%
  */
-uint16_t getSoilHumidityPercentage();
+uint8_t getSoilHumidityPercentage();
 
 /* Function prototypes -----------------------------------------------*/
 /**

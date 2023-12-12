@@ -154,7 +154,7 @@ void print_default(int16_t temp, int16_t temp_dec, int16_t hum, int16_t hum_dec,
     //* display soil humidity
     oled_gotoxy(0, 5);
     itoa(s_hum, string, 10);
-    oled_puts("soild - ");
+    oled_puts("soilh - ");
     oled_puts(string);
     oled_putc('%');
 
