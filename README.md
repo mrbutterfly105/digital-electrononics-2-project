@@ -123,14 +123,14 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
    - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
    - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
    <br>
-V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
+* V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
 ### Rozsvěcování kontrolek malého obsahu nádrže a špatné teploty
 * Knihovna `controls.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/controls/controls.c) Podle stavu rozsvěcí a zhasíná jednotlivé jednotlivé kontrolky. Stav se přiřazuje v knihovně `pot.c` :[library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project//lib/pot/pot.c).
 
 ### Čtení ze senzoru na světlo
  * Knihovna `light.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.c) slouží k ke čtení ze senzoru zda se nachází v okolním prostředí dostatek světla. Tento senzor je zapojen pomocí pararelního zapojení fotorezistoru a 2k odporu. Ze senzoru dostáváme dvě hodnoty 1 nebo 0, tedy pokud se nachází světlo v okolí nebo nikoliv. Při nedostatku světla se zapne lampa, v našem provedení jde o modrou LED diodu.
- * V hlavičkovém souboru `light.h`[header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.h) jsou použité funkce deklarovány. 
+ * V hlavičkovém souboru `light.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.h) jsou použité funkce deklarovány. 
 ## Instrukce
 
 Write an instruction manual for your application, including photos and a link to a short app video.
