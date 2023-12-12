@@ -147,6 +147,7 @@ Po zapojení všech součástek k arduinu a nahrání kódu, se na oled displeji
 Při dalším prokliku bílého tlačítka se dostaneme do nastavení, ve kterém nastavíme při jaké plnosti nádrže na vodu začne svítit zelená kontrolka, která značí málo vody v nádrži.
 Po dalším zmáčknutí bílého tlačítka se dostáváme zpátky do menu. 
 Toto jsou jediné věci, které uživatel sám nastaví, jinak vše běží automaticky.
+
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Foto%20zapojení.jpg)
 
 
