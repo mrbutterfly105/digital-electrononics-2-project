@@ -81,9 +81,6 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    │   ├── pot       
    │   │   ├── pot.c
    │   │   └── pot.h
- % │   ├── rtc        
- % │   │   ├── rtc.c
- % │   │   └── rtc.h
    │   └── light       
    │       ├── light.c
    │       └── light.h
@@ -92,6 +89,12 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    ├── test            // No need this
    └── platformio.ini  // Project Configuration File
    ```
+<!---
+Tohle jsem z toho vytáhl jelikož to již nepoužíváme
+ │   ├── rtc        
+ │   │   ├── rtc.c
+ │   │   └── rtc.h
+ -->
 ### čtení ze senzoru vlhkosti a teploty vzduchu
  * Knihovna `HumTempSensor.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/soil/de2-project/lib/HumTempSensor/HumTempSensor.c) slouží ke čtení dat ze senzoru teploty vzduchu a vlhkosti vzduchu.
  Tato komunikace probíhá na principu I2C a proto je zde použita knihovna `twi`, kterou vytvořil pan doc. Ing. Tomáš Frýza, Ph.D a používali jsem jí v průběhu předmětu Digitální elektronika 2. Funkce `getDataFromSensor()` čte data z I2C z předem nadefinovaných adres a ukládá je do struktury `DHT_values_structure`. Celé a destinné části dat vlhkosti a teploty jsou uloženy jako bajty spolu s kontrolním součtem.
