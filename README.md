@@ -6,7 +6,7 @@ Tenhle projekt je zakončující projekt předmětu [Digitální elektronika 2](
 
 ### Autoři
 
-* Tomáš Paulysko (zodpovědný za tlačítka, oled displej,hlavní proces a video)
+* Tomáš Paulysko (zodpovědný za tlačítka, oled displej, hlavní proces a video)
 * Martin Mička (zodpovědný za senzor světla, lampu, vývojový diagram a README)
 * Tomáš Husslik (zodpovědný za senzor vlhkosti hlíny a hladiny nádrže, zalévání a README)
 * Jakub Pachel((zodpovědný za senzor vlhkosti a teploty vzduchu, kontrolky, doxygen generování a README)
