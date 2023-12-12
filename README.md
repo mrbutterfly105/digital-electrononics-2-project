@@ -146,7 +146,7 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
 Po zapojení všech součástek k arduinu a nahrání kódu, se na oled displeji objeví hlavní menu, na kterém jsou vypsané údaje o teplotě a vlhkosti vzduchu, o vlhkosti půdy a o množství vody v nádrži. Po prvním zmáčknutí bílého tlačítka se na displeji z menu dostaneme na nastavení maximální povolené teploty. Tuto teplotu můžeme změnit pomocí červeného a černého tlačítka, při zmáčknutí červeného tlačítka se teplota sníží, naopak při zmáčknutí černého tlačítka se teplota zvýší. Tímto způsobem si nastavíme požadovanou maximální teplotu vzduchu. Při dalším zmáčknutí bílého tlačítka se dostaneme na nastavení minimální možné teploty, kterou nastavíme stejně za použití tlačítek. Pokud teplota ze senzoru nebude v rozmezí rozsvítí se červená kontrolka.
 Při dalším prokliku bílého tlačítka se dostaneme do nastavení, ve kterém nastavíme při jaké plnosti nádrže na vodu začne svítit zelená kontrolka, která značí málo vody v nádrži.
 Po dalším zmáčknutí bílého tlačítka se dostáváme zpátky do menu. 
-Toto jsou jediné věci, které uživatel sám nastavuje, jinak vše běží automaticky.
+Toto jsou jediné věci, které uživatel sám nastaví, jinak vše běží automaticky.
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Foto%20zapojení.jpg)
 
 
