@@ -62,8 +62,18 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    │   ├── display       
    │   │   ├── display.c
    │   │   └── display.h
-   │
-   │
+   │   ├── buttons       
+   │   │   ├── buttons.c
+   │   │   └── buttons.h
+   │   ├── pot       
+   │   │   ├── pot.c
+   │   │   └── pot.h
+   │   ├── rtc       
+   │   │   ├── rtc.c
+   │   │   └── rtc.h
+   │   └── light       
+   │       ├── light.c
+   │       └── light.h
    ├── src             // Source file(s)
    │   └── main.c
    ├── test            // No need this
