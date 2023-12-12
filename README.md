@@ -21,6 +21,12 @@ Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Pé�
 
 Insert descriptive text and schematic(s) of your implementation.
 
+Hardware našeho projektu je ovládací jednotka Arduino UNO od firmy Atmel. 
+  - Dva senzory vlhkosti kdy jeden z nich měří vlhkost hlíny v květináči a ten druhý měří obsah nádrže na vodu. Pro obě měření využíváme senzor: `Capacitive soil moisture sensor v1.2` a data z nich čteme skrz ---analogové výslupy A0 a A1 viz schéma zapojení.
+  - Jako další senzor využíváme senzor teploty a vlhkosti vzduchu: `DHT12` který s arduinem kominikuje skrz I2C.
+  - Jako senzor okolního světla využíváme `fotorezistor GL5539`.
+  - Lampa která se rozsvěcí v závislosti na dostatek světla je v našem provedení modrá `led dioda`.
+
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/SCHEMA.svg)
