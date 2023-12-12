@@ -24,9 +24,9 @@ Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Pé�
 ![Page5_2](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/5ac3bc4b-e355-40ce-aa90-88d9c50943ea))
 -->
 ## Hardwarový popis
-
+<!---
 Insert descriptive text and schematic(s) of your implementation.
-
+-->
 <!---
 TADY TOPSAT TYPY SOUČÁSTEK (PŘÍPADNĚ UPRAVIT)
 -->
@@ -60,7 +60,7 @@ Takto vypadá zapojení pro demonstraci funkčnosti na hodině digitální elekt
 ## Softwarový popis
 
 
-### Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
+##### Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
 
 Vývojový diagram kódu je následující:
