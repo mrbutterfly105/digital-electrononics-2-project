@@ -6,7 +6,7 @@
 char string[10];
 //! for debug
 
-uint8_t j = 0;
+// uint8_t j = 0;
 
 int main(void)
 {
@@ -23,15 +23,15 @@ int main(void)
     {
         // itoa(j, string, 10);
         // uart_puts(string);
-        uart_puts(".");
+        // uart_puts(".");
 
-        if (j > 1)
-        {
-            j = 0;
+        // if (j > 1)
+        // {
+        //     j = 0;
             main_process();
             uart_puts("j rst");
             uart_puts("\n");
-        }
+        // }
     }
 
     return 0;
@@ -40,5 +40,5 @@ int main(void)
 ISR(TIMER1_OVF_vect)
 {
 
-    j++;
+    // j++;
 }
