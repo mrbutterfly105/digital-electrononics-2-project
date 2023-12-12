@@ -107,7 +107,7 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
    <br>
 V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
-### Rozsvěcování kontrolek malého obashu nádrže a špatné teploty
+### Rozsvěcování kontrolek malého obsahu nádrže a špatné teploty
 * Knihovna `controls.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/controls/controls.c) Podle stavu rozsvěcí a zhasíná jednotlivé jednotlivé kontrolky. Stav se přiřazuje v knihovně `pot.c` :[library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project//lib/pot/pot.c).
 
 ## Instructions
@@ -117,4 +117,4 @@ Write an instruction manual for your application, including photos and a link to
 ## References
 
 1. Learning material from Digital electronics 2 course.
-2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository.
+2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
