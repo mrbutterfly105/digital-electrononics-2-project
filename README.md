@@ -46,17 +46,17 @@ Hardware našeho projektu:
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
 Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
- <br>
+<br />
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
 
 Na obrázku je znázorněno jak by vypadala celková realizace chytrého květináče.
- <br>
+ <br />
 ![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/24e787b6-26b1-4c22-89d5-f894bc44e786)
 
 ## Softwarový popis
 
-###Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
+### Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
@@ -126,7 +126,7 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
    - `get_air_humidity_dec()`: Vrací desetinnou část vzdušné vlhkosti.
    - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
    - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
-   <br>
+  <br />
 * V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
 ### Rozsvěcování kontrolek malého obsahu nádrže a špatné teploty
