@@ -1,8 +1,13 @@
 /**
- * @file display.h
+ * @file display.h 
+ * @defgroup Display (oled) library <display.h>
+ * @code #include <display.h> @endcode
+ *
  * @brief Display functions header file.
+ *
+ *
+ * @{
  */
-
 #include <oled.h>
 #include <uart.h>
 #include <buttons.h>

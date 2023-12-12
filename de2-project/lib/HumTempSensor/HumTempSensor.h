@@ -1,3 +1,9 @@
+/**
+ * @file HumTempSensor.h
+ * @defgroup Humidity and Temperature sensors library <HumTempSensor.h>
+ * @code #include <HumTempSensor.h> @endcode
+ * @brief Header file for the Humidity and Temperature Sensor functions.
+ */
 #ifndef HumTempSensor_H
 #define HumTempSensor_H
 

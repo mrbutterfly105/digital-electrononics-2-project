@@ -1,3 +1,7 @@
+/**
+ * @file display.c
+ * @brief Display functions implementation file.
+ */
 #include <oled.h>
 #include <uart.h>
 #include <buttons.h>

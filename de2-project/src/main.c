@@ -1,3 +1,7 @@
+/**
+ * @file main.c
+ * @brief Main program file for the smart pot system.
+ */
 #include <pot.h>
 
 #include "timer.h"
@@ -7,6 +11,12 @@ char string[10];
 //! for debug
 
 uint8_t j = 0;
+/**
+ * @brief The main function for the smart pot system.
+ * @details Initializes the system, enables global interrupts, sets up a timer interrupt,
+ * and enters an infinite loop to continuously process the main logic.
+ * @return The program exit code (always 0 in this case).
+ */
 
 int main(void)
 {
@@ -31,7 +41,10 @@ int main(void)
 
     return 0;
 }
-
+/**
+ * @brief Timer1 overflow interrupt service routine.
+ * @details Increments the variable 'j' to indicate the passage of time.
+ */
 ISR(TIMER1_OVF_vect)
 {
 

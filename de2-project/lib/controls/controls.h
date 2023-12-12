@@ -1,3 +1,15 @@
+/**
+ * @file controls.h 
+ * @defgroup Controls - temperature and fulness of tank <controls.h>
+ * @code #include <controls.h> @endcode
+ *
+ * @brief Control functions for maintaining good temperature and tank fullness.
+ *
+ * This module provides functions to control LEDs indicating low water level and high temperature.
+ *
+ * @{
+ */
+
 #ifndef controls_H
 #define controls_H
 

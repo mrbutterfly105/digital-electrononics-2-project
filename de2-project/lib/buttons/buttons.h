@@ -1,6 +1,8 @@
 // gpio_switch.h
 /**
  * @file buttons.h
+ * @defgroup Buttons <buttons.h>
+ * @code #include <buttons.h> @endcode
  * @brief Button handling functions header file.
  */
 
