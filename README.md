@@ -143,7 +143,7 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
  * Knihovna `light.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.c) slouží k ke čtení ze senzoru zda se nachází v okolním prostředí dostatek světla. Tento senzor je zapojen pomocí pararelního zapojení fotorezistoru a 2k odporu. Ze senzoru dostáváme dvě hodnoty 1 nebo 0, tedy pokud se v okolí nachází světlo nebo nikoliv. Při nedostatku světla se lampa zapne, v našem provedení jde o modrou LED diodu.
  * V hlavičkovém souboru `light.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.h) jsou použité funkce deklarovány. 
 ## Instrukce
-
+![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Foto%20zapojení.jpg)
 Write an instruction manual for your application, including photos and a link to a short app video.
 
 ## Zdroje
