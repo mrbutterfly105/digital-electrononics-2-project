@@ -12,9 +12,6 @@
 #include <avr/io.h> // AVR device-specific IO definitions, data type declarations
 #include <soil.h>   // Include header file
 #include <gpio.h>   // Include GPIO library
-#include <uart.h>
-
-char string[10];
 
 /* Function definitions ----------------------------------------------*/
 /**********************************************************************
@@ -44,8 +41,6 @@ uint8_t getSoilHumidityPercentage()
     };                      // wait for conversion to finish (polling method)
     ADCvalue = ADC;         // ADC finished, put result variable into ADCvalue
     ADCSRA &= ~(1 << ADIF); // clear ADIF after conversion (ADIF is not cleared automatically unless we are using interrupt method)
-    // itoa(ADCvalue,string,10);
-    // uart_puts(string);
     percent = (float)(ADCvalue - min) / (max - min) * 100; // calculate percentage, normalized to the interval defined by max and min variables
     pct = (int)percent;                                    // convert float back to int (with a small flooring error)
     pct = 100 - pct;                                       // invert percentage value, higher moisture (moist soil) -> lower voltage
