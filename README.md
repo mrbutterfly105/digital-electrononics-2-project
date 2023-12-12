@@ -13,7 +13,7 @@
 
 Enter a description of the problem and how to solve it:
 
-Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Péče 
+Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Péče o rostlinu dokáže být velice obtížná činnost. Někdo to má jako koníček ale zdaleka né každého baví zaždodení zalévání a sledování počasí aby jim jejich rostlina například nezmrzla. Proto náš tým vytvořil tento projek díky němuž pěstování kytek nebylo nikdy jednodušší. Stačí doplňovat nádrž na vodu na což vás sama upozorní kontrolka kterou má náš produkt v sobě zabudovaný. Druhá kontrolka vás upozorní pokud jsou pro rostlinu nepříznivé teplotní podmínky. Rozsah teplotních podmínek pro jednotlivé kytky a hranice plnosti nádrže při které chcte aby vás produkt upozornil na nutnost doplnění jsou také individuální. Proto je náš produkt doplněn o displej na kterém se přehledně zobrazují hodnoty z čidel ale hlavně díky 3 tlačítkům si můžete nastavit prahy maximální a minimální teploty a zároveň si můžete nastavit procentuální hranici objemu nádrže při které se rozsvítí kontrolka. 
 
 ![Page5_2](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/5ac3bc4b-e355-40ce-aa90-88d9c50943ea)
 
