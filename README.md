@@ -40,7 +40,7 @@ Hardware našeho projektu:
   - Kontrolka která se rozsvítí při malém objemu nádrže na vodu `zelená led dioda`.
   - Na pumpování vody z nádrže do květináče používáme `Jednokanálový relé modul - 5V`.
   - k ovládání používáme 3 tlačítka `tlačítka`.
-  - pro zobrazování hodnot používáme `oled display`.
+  - pro zobrazování hodnot používáme `I2C OLED display 128x64`.
 
 <!---
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
