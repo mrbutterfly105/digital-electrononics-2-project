@@ -56,7 +56,9 @@ Doxygen dokumentace dostupná ne: [Smart pot documentation](https://mrbutterfly1
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
-- dodělat:
+
+
+Struktura projektu vypadá následovně.
 
 ```c
    DE2-PROJECT          
