@@ -118,3 +118,4 @@ Write an instruction manual for your application, including photos and a link to
 
 1. Learning material from Digital electronics 2 course.
 2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
+3. Arduino Uno board [documentation](https://docs.arduino.cc/hardware/uno-rev3)
