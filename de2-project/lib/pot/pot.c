@@ -1,3 +1,7 @@
+/**
+ * @file pot.c
+ * @brief Main control functions implementation file for the smart pot.
+ */
 
 /* Includes ----------------------------------------------------------*/
 #include <controls.h>
@@ -42,6 +46,9 @@ uint16_t seconds = 30;
 char string[10];
 //! for debug
 
+/**
+ * @brief Updates the LED indicators based on system conditions.
+ */
 void update_led()
 {
     uint16_t air_temp = air_temp_int + air_temp_dec / 10;
@@ -63,10 +70,16 @@ void update_led()
     }
 }
 
+/**
+ * @brief Placeholder for the pump update function.
+ */
 update_pump(){
     
 }
 
+/**
+ * @brief Initializes the smart pot, including peripherals and sensors.
+ */
 void pot_init()
 {
 
@@ -89,6 +102,10 @@ void pot_init()
     tank_level = getTankLevelPercentage();
 }
 
+/**
+ * @brief Main processing function for the smart pot, responsible for sensor updates,
+ * LED control, and display updates.
+ */
 void main_process()
 {
 
