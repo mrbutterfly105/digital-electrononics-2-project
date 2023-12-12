@@ -36,14 +36,14 @@ uint8_t getSoilHumidityPercentage();
 
 /* Function prototypes -----------------------------------------------*/
 /**
- * @brief  Set pin PB0 to logical 0.
+ * @brief  Set pin PB0 to logical 1.
  * @return none
  */
 void pumpTurnOff();
 
 /* Function prototypes -----------------------------------------------*/
 /**
- * @brief  Set pin PB0 to logical 1.
+ * @brief  Set pin PB0 to logical 0.
  * @return none
  */
 void pumpTurnOn();

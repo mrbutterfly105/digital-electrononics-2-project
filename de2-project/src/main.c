@@ -16,21 +16,16 @@ int main(void)
     TIM1_OVF_262MS;
     TIM1_OVF_ENABLE;
 
-    // TIM2_OVF_16MS;
-    // TIM2_OVF_ENABLE;
-
     while (1)
     {
-        // itoa(j, string, 10);
-        // uart_puts(string);
-         uart_puts("");
+        uart_puts("");
 
         if (j > 1)
         {
             j = 0;
             main_process();
-            uart_puts("j rst");
-            uart_puts("\n");
+            uart_puts("main called \n");
+            uart_puts("");
         }
     }
 

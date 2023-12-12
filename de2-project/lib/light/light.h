@@ -17,4 +17,4 @@
 void light_init();
 uint16_t get_ambient_light_state();
 void set_rtc(int16_t hours, int16_t minutes, int16_t seconds);
-void update_light(int8_t hours, int8_t minutes, int8_t seconds);
+void update_light();

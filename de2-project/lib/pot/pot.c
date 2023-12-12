@@ -36,11 +36,7 @@ int tank_level = 0;
 
 int16_t max_temp = 30;      // in C
 int16_t min_temp = 10;      // in C
-int16_t min_tank_fill = 30; // in %
-
-uint16_t hours = 6;
-uint16_t minutes = 59;
-uint16_t seconds = 30;
+int16_t min_tank_fill = 40; // in %
 
 //! for debug
 char string[10];
@@ -70,11 +66,24 @@ void update_led()
     }
 }
 
+<<<<<<< Updated upstream
 /**
  * @brief Placeholder for the pump update function.
  */
 update_pump(){
     
+=======
+void update_pump()
+{
+    if (soil_hum < 30 && tank_level > 10)
+    {
+        pumpTurnOn();
+    }
+    else
+    {
+        pumpTurnOff();
+    }
+>>>>>>> Stashed changes
 }
 
 /**
@@ -108,7 +117,6 @@ void pot_init()
  */
 void main_process()
 {
-
     air_humidity_int = get_air_humidity_int();
     air_humidity_dec = get_air_humidity_dec();
     air_temp_int = get_air_temp_int();
@@ -118,25 +126,9 @@ void main_process()
     tank_level = getTankLevelPercentage();
 
     update_led();
+    update_pump();
 
-    // itoa(get_ambient_light_state(), string, 10);
-    // uart_puts(string);
-
-    update_light(hours, minutes, seconds);
-
-    // // debug
-    // itoa(hours, string, 10);
-    // uart_puts(string);
-    // // debug
-
-    // rtc_read_hours(&hours);
-
-    // itoa(hours, string, 10);
-    // uart_puts(string);
-    // // debug
-
-    // rtc_read_minutes(&minutes);
-    // rtc_read_seconds(&seconds);
+    update_light();
 
     check_for_setup();
     update_display(air_temp_int, air_temp_dec, air_humidity_int,
