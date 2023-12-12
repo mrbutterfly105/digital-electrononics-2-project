@@ -54,9 +54,8 @@ Na obrázku je znázorněno jak by vypadala celková realizace chytrého květin
 
 ## Softwarový popis
 
-Doxygen dokumentace dostupná ne: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
+Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
-Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
 
