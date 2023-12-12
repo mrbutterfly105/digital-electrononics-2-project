@@ -46,19 +46,19 @@ Hardware našeho projektu:
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
 Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
-<br />
+<br/>
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
 
 Na obrázku je znázorněno jak by vypadala celková realizace chytrého květináče.
- <br />
+ <br/>
 ![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/24e787b6-26b1-4c22-89d5-f894bc44e786)
 
 ## Softwarový popis
 
 ### Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
-
+Vývojový diagram kódu je následující:
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
 
 
