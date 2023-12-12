@@ -1,6 +1,6 @@
 #include <gpio.h>
 
-#define SENZOR_PIN PC2 // A1
+#define SENZOR_PIN PC2 // A2
 #define LAMP PB2       // D10
 
 char time_string[9];
