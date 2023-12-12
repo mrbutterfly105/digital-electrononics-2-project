@@ -45,13 +45,12 @@ Hardware našeho projektu:
 <!---
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
-Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
-
+Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu. I2C komunikaci vyuřívá oled displej a senzor teploty a vlhkosti vzduchu. Dále náš produkt využívá 7 digitálních pinů a 3 analogové.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Zapojen%C3%AD.svg)
 
 
-Takto vypadá zapojení pro demonstraci funkčnosti na hodině digitální elektroniky 2. Jak by vypadala realizace celého květináče je znázorněno na tomto obrázku:
+Takto vypadá zapojení pro demonstraci funkčnosti na hodině digitální elektroniky 2. Následující obrázek vznikl na začátku realizace projektu. V průběhu vyvýjení projektu se naše představy jak by výsledná realizace měla vypadat nezměnili. A proto si návrh jak by naše finální realizace vypadala můžete prohlédnout zde:
 
 
 
@@ -63,13 +62,13 @@ Takto vypadá zapojení pro demonstraci funkčnosti na hodině digitální elekt
 ##### Doxygen dokumentace dostupná na: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
 
-Vývojový diagram kódu je následující:
+Pro lepší orientaci v tom jak kód funguje byl vytvořen vývojový diagram. Který zobrazuje jednotlivé rozhodovací procesy programu: 
 
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
 
 
-Struktura projektu vypadá následovně.
+Jelikož náš kód obsahuje spoustu knihoven a jejich hlavičkových souborů. Pro lepší přehled je zde znázorněna struktura co za soubory náš program obsahuje.
 
 ```c
    DE2-PROJECT          
