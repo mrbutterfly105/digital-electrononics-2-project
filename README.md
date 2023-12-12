@@ -148,7 +148,8 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
 
 
 * Knihova `pot.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/pot/pot.c) je knihovna která se stará o celý chod programu. Obsahuje dvě hlavní funkce `main_process()`[](), ve které běží celá logika programu. Druhá hlavní funkce je `pot_init()`[]() ve které se inicializují všechny ostatní knihovny. 
-* Knihvna `display.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/display/display.c) obsahuje všehny funkce pro obsluhu displaje. 
+* Knihvna `display.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/display/display.c) obsahuje všehny funkce pro obsluhu displeje a pro zobrazování jednotlivých obrazocek menu. Zárověň Komunikuje s knihovnou `buttons.c` pro detekci tlačítek.
+* Knihvna `buttons.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/buttons/buttons.c) obsahuje funkce pro detekci a inicializaci tlačítek.
 
 
 ## Instrukce
