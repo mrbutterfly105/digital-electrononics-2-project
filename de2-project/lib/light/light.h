@@ -23,7 +23,7 @@
 
 #include <stdint.h>
 
-#define SENZOR_PIN PC1 // A1
+#define SENZOR_PIN PC1 // A2
 #define LAMP PB2       // D10
 
 /**

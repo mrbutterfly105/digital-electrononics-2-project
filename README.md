@@ -1,15 +1,17 @@
 
 
-# Smart plant watering system and data logger 
+# Chytrý systém pro zavlažování rostlin se záznamníkem dat
 
-### Team members
+Tenhle projekt je zakončující projekt předmětu [Digitální elektronika 2](https://github.com/tomas-fryza/digital-electronics-2/tree/master/labs/09-project) na VUT v Brně.
+
+### Autoři
 
 * Tomáš Paulysko (responsible for display and encoder)
 * Martin Mička (responsible for light sensor and lamp)
 * Tomáš Husslik (responsible for soil moisture sensors and watering)
 * Jakub Pachel(responsible for thermometer and humidity sensor, control lights)
 
-## Theoretical description and explanation
+## Teoretický popis a vysvětlení
 
 Enter a description of the problem and how to solve it:
 
@@ -18,29 +20,45 @@ Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Pé�
 <!---
 ![Page5_2](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/5ac3bc4b-e355-40ce-aa90-88d9c50943ea))
 -->
-## Hardware description of demo application
+## Hardwarový popis
 
 Insert descriptive text and schematic(s) of your implementation.
 
-Hardware našeho projektu je ovládací jednotka Arduino UNO od firmy Atmel. 
-  - Dva senzory vlhkosti kdy jeden z nich měří vlhkost hlíny v květináči a ten druhý měří obsah nádrže na vodu. Pro obě měření využíváme senzor: `Capacitive soil moisture sensor v1.2` a data z nich čteme skrz ---analogové výslupy A0 a A1 viz schéma zapojení.
+<!---
+TADY TOPSAT TYPY SOUČÁSTEK (PŘÍPADNĚ UPRAVIT)
+-->
+Hardware našeho projektu:
+  - ovládací jednotka `Arduino UNO` od společnosti `Atmel`.
+  - Dva senzory vlhkosti kdy jeden z nich měří vlhkost hlíny v květináči a ten druhý měří obsah nádrže na vodu. Pro obě měření využíváme senzor: `Capacitive soil moisture sensor v1.2` 
   - Jako další senzor využíváme senzor teploty a vlhkosti vzduchu: `DHT12` který s arduinem kominikuje skrz I2C.
   - Jako senzor okolního světla využíváme `fotorezistor GL5539`.
-  - Lampa která se rozsvěcí v závislosti na dostatek světla je v našem provedení modrá `led dioda`. 
+  - Lampa která se rozsvěcí v závislosti na dostatek světla je v našem provedení `modrá led dioda`.
+  - Kontrolka která se rozsvítí při nepříznivých teplotních podmínkách `červená led dioda`.
+  - Kontrolka která se rozsvítí při malém objemu nádrže na vodu `zelená led dioda`.
+  - Na pumpování vody z nádrže do květináče používáme `relé (doplnit jaký)`.
+  - k ovládání používáme 3 tlačítka `tlačítka`.
+  - pro zobrazování hodnot používáme `oled display`.
+
 <!---
 ![Page6](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/a3395297-1f91-45a3-b652-0e4c7b957d01)
 -->
-![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/SCHEMA.svg)
+Na obrázku je znázorněno jakým způsobem jsou jednotlivé součástky připojené k Arduinu.
+![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/zapojení.svg)
 
 
 
 ![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/24e787b6-26b1-4c22-89d5-f894bc44e786)
 
-## Software description
+## Softwarový popis
+
+Doxygen dokumentace dostupná ne: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
+
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Diagramf.png)
-- dodělat:
+
+
+Struktura projektu vypadá následovně.
 
 ```c
    DE2-PROJECT          
@@ -105,16 +123,20 @@ Tohle jsem z toho vytáhl jelikož to již nepoužíváme
    - `get_air_temp_int()`: Vrací celou část vzdušné teploty.
    - `get_air_temp_dec()`: Vrací desetinnou část vzdušné teploty.
    <br>
-V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
+* V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
-### Rozsvěcování kontrolek malého obashu nádrže a špatné teploty
+### Rozsvěcování kontrolek malého obsahu nádrže a špatné teploty
 * Knihovna `controls.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/controls/controls.c) Podle stavu rozsvěcí a zhasíná jednotlivé jednotlivé kontrolky. Stav se přiřazuje v knihovně `pot.c` :[library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project//lib/pot/pot.c).
 
-## Instructions
+### Čtení ze senzoru na světlo
+ * Knihovna `light.c` : [Library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.c) slouží k ke čtení ze senzoru zda se nachází v okolním prostředí dostatek světla. Tento senzor je zapojen pomocí pararelního zapojení fotorezistoru a 2k odporu. Ze senzoru dostáváme dvě hodnoty 1 nebo 0, tedy pokud se v okolí nachází světlo nebo nikoliv. Při nedostatku světla se lampa zapne, v našem provedení jde o modrou LED diodu.
+ * V hlavičkovém souboru `light.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/light/light.h) jsou použité funkce deklarovány. 
+## Instrukce
 
 Write an instruction manual for your application, including photos and a link to a short app video.
 
-## References
+## Zdroje
 
-1. Write your text here.
-2. ...
+1. Learning material from Digital electronics 2 course.
+2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
+3. Arduino Uno board [documentation](https://docs.arduino.cc/hardware/uno-rev3)
