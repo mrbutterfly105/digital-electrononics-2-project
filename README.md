@@ -81,7 +81,7 @@ Put flowchats of your algorithm(s) and direct links to source files in `src` or 
    <br>
     <br>
 
-  Hlavičkový soubor  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) slouží k deklaraci a definici funkcí aby následně kompilátor věděl jaké 
+V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/HumTempSensor/HumTempSensor.h) jsou pak tyto funkce deklarovány.
 
 ## Instructions
 
