@@ -1,17 +1,17 @@
 
 
-# Smart plant watering system and data logger 
+# Chytrý systém pro zavlažování rostlin se záznamníkem dat
 
 Tenhle projekt je zakončující projekt předmětu [Digitální elektronika 2](https://github.com/tomas-fryza/digital-electronics-2/tree/master/labs/09-project) na VUT v Brně.
 
-### Team members
+### Autoři
 
 * Tomáš Paulysko (responsible for display and encoder)
 * Martin Mička (responsible for light sensor and lamp)
 * Tomáš Husslik (responsible for soil moisture sensors and watering)
 * Jakub Pachel(responsible for thermometer and humidity sensor, control lights)
 
-## Theoretical description and explanation
+## Teoretický popis a vysvětlení
 
 Enter a description of the problem and how to solve it:
 
@@ -20,7 +20,7 @@ Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Pé�
 <!---
 ![Page5_2](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/5ac3bc4b-e355-40ce-aa90-88d9c50943ea))
 -->
-## Hardware description of demo application
+## Hardwarový popis
 
 Insert descriptive text and schematic(s) of your implementation.
 
@@ -48,7 +48,7 @@ Hardware našeho projektu:
 
 ![realizace](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/24e787b6-26b1-4c22-89d5-f894bc44e786)
 
-## Software description
+## Softwarový popis
 
 Doxygen dokumentace dostupná ne: [Smart pot documentation](https://mrbutterfly105.github.io/digital-electrononics-2-project/).
 Put flowchats of your algorithm(s) and direct links to source files in `src` or `lib` folders.
@@ -123,11 +123,11 @@ V hlavičkovém souboru  `HumTempSensor.h` : [header file](https://github.com/mr
 ### Rozsvěcování kontrolek malého obsahu nádrže a špatné teploty
 * Knihovna `controls.c` : [library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/lib/controls/controls.c) Podle stavu rozsvěcí a zhasíná jednotlivé jednotlivé kontrolky. Stav se přiřazuje v knihovně `pot.c` :[library source file](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project//lib/pot/pot.c).
 
-## Instructions
+## Instrukce
 
 Write an instruction manual for your application, including photos and a link to a short app video.
 
-## References
+## Zdroje
 
 1. Learning material from Digital electronics 2 course.
 2. Libraries from [Digital-Electronics-2](https://github.com/tomas-fryza/digital-electronics-2) GitHub repository created by doc. Ing. Tomáš Frýza Ph.D.
