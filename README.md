@@ -11,7 +11,9 @@
 
 ## Theoretical description and explanation
 
-Enter a description of the problem and how to solve it.
+Enter a description of the problem and how to solve it:
+
+Tento projekt se zabývá automatizovaným procesem pečování o rostlinu. Péče 
 
 ![Page5_2](https://github.com/mrbutterfly105/digital-electrononics-2-project/assets/61315339/5ac3bc4b-e355-40ce-aa90-88d9c50943ea)
 
