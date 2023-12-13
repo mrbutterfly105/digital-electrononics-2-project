@@ -159,9 +159,10 @@ Po dalším zmáčknutí bílého tlačítka se dostáváme zpátky do menu.
 Toto jsou jediné věci, které uživatel sám nastaví, jinak vše běží automaticky.
 
 ![Page7](https://github.com/mrbutterfly105/digital-electrononics-2-project/blob/main/de2-project/images/Foto%20zapojení.jpg)
-
+<!---
 <a href="https://www.youtube.com/watch?v=wBUNLNUlrbI"><h3>Video návod</h3></a>
-
+-->
+### [Video návod](https://www.youtube.com/watch?v=wBUNLNUlrbI)
 
 ## Zdroje
 
