@@ -26,6 +26,7 @@
 #define F_CPU 16000000 // CPU frequency in Hz required for UART_BAUD_SELECT
 #endif
 
+// global variables of sensor data
 int air_humidity_int = 0;
 int air_humidity_dec = 0;
 int air_temp_int = 0;
@@ -34,6 +35,7 @@ int air_temp_dec = 0;
 int soil_hum = 0;
 int tank_level = 0;
 
+// default limits for control lights
 int16_t max_temp = 30;      // in C
 int16_t min_temp = 10;      // in C
 int16_t min_tank_fill = 40; // in %
@@ -90,22 +92,28 @@ void update_pump()
  */
 void pot_init()
 {
-
+    // I2C inicialization
     twi_init();
+    
+    // uart inicialization
     uart_init(UART_BAUD_SELECT(115200, F_CPU));
 
+    // inicialization of display and first write
     init_display();
+
+    // set button pins for intput - internal pullup
     init_buttons();
 
-    // rtc_init();
-    // set_rtc(hours, minutes, seconds);
+    // init of pin for lamp
     light_init();
 
+    // get fist values from senzor humidity sensor
     air_humidity_int = get_air_humidity_int();
     air_humidity_dec = get_air_humidity_dec();
     air_temp_int = get_air_temp_int();
     air_temp_dec = get_air_temp_dec();
 
+    // get fist values from siol senzors
     soil_hum = getSoilHumidityPercentage();
     tank_level = getTankLevelPercentage();
 }
@@ -116,6 +124,7 @@ void pot_init()
  */
 void main_process()
 {
+    //read data from seznor
     air_humidity_int = get_air_humidity_int();
     air_humidity_dec = get_air_humidity_dec();
     air_temp_int = get_air_temp_int();
@@ -124,12 +133,19 @@ void main_process()
     soil_hum = getSoilHumidityPercentage();
     tank_level = getTankLevelPercentage();
 
+    // control light on fi needed
     update_led();
+
+    // if there is low soil moisture, pump will start pump
     update_pump();
 
+    // in case that low level in room is low, turn on lamp
     update_light();
 
+    // check if some button is pressed
     check_for_setup();
+
+    // write values on display
     update_display(air_temp_int, air_temp_dec, air_humidity_int,
                    air_humidity_dec, soil_hum, tank_level,
                    &max_temp, &min_temp, &min_tank_fill);
